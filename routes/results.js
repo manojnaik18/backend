@@ -62,6 +62,7 @@ router.get('/results/all', async (req, res) => {
 // GET /api/dashboard-summary
 router.get('/dashboard-summary', async (req, res) => {
     try {
+        const resultsCount = await Result.countDocuments();
         const results = await Result.find().populate('student').populate('subject');
 
         const studentMap = {};
@@ -109,6 +110,7 @@ router.get('/dashboard-summary', async (req, res) => {
         });
 
         res.json({
+            resultsCount,
             overallClassAverage,
             avgPerSubject,
             top3Students,
