@@ -12,7 +12,7 @@ const authMiddleware = require('./routes/authMiddleware');
 const app = express();
 
 // CORS Configuration
-const allowedOrigins = ['https://teachdashboard.netlify.app', 'http://localhost:5173', 'http://localhost:3000'];
+const allowedOrigins = ['https://teachdashboard.netlify.app', 'http://localhost:5173', 'http://localhost:3000','https://frontend-eight-flame-79.vercel.app'];
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
